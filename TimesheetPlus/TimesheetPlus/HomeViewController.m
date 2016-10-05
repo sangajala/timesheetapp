@@ -30,6 +30,7 @@ static UIColor *lightOrangeColor;
     UILabel *labelWeek;
     UILabel *labelMonth;
     NSTimer *timerx;
+    int maxLimit;
 }
 
 @end
@@ -181,14 +182,14 @@ static UIColor *lightOrangeColor;
     [underlay addSubview:labelDay];
 
     
-    UILabel *labelWeek = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(labelDay.frame), 0, width, height)];
+    labelWeek = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(labelDay.frame), 0, width, height)];
     labelWeek.backgroundColor = [UIColor clearColor];
     labelWeek.textColor = [UIColor blackColor];
     labelWeek.textAlignment = NSTextAlignmentCenter;
     labelWeek.text = @"0";
     [underlay addSubview:labelWeek];
     
-    UILabel *labelMonth = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(labelWeek.frame), 0, width, height)];
+   labelMonth = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(labelWeek.frame), 0, width, height)];
     labelMonth.backgroundColor = [UIColor clearColor];
     labelMonth.textColor = [UIColor blackColor];
     labelMonth.text = @"0";
@@ -274,23 +275,33 @@ static UIColor *lightOrangeColor;
         [timerx invalidate];
         labelDay.text = [NSString stringWithFormat:@"%d",secs];
         secs = 0;
+        minutes = 0;
+        hours = 0;
+        
     }
 }
 
+
+
 -(void) timerTick:(NSTimer *)timer
 {
+    maxLimit = 5;
     secs = secs+1;
-    if(secs==60)
+    if(secs==maxLimit)
     {
-        if(minutes==60)
+        if(minutes==maxLimit)
         {
             hours = hours + 1;
             minutes = 0;
             secs = 0;
         }
+        else
+        {
         minutes = minutes + 1;
         secs = 0;
+        }
     }
+    
     labelDay.text = [NSString stringWithFormat:@"%d",secs];
     labelWeek.text = [NSString stringWithFormat:@"%d",minutes];
     labelMonth.text = [NSString stringWithFormat:@"%d",hours];

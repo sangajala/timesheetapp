@@ -158,7 +158,7 @@ static UIColor *lightOrangeColor;
     summaryView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:summaryView];
     UILabel *summaryLabel = [[UILabel alloc]initWithFrame:CGRectMake(0,0, width, height)];
-    summaryLabel.attributedText = [[NSAttributedString alloc]initWithString:@"TOTAL" attributes:@{NSForegroundColorAttributeName : lightOrangeColor, NSFontAttributeName : [UIFont boldSystemFontOfSize:15]}];
+    summaryLabel.attributedText = [[NSAttributedString alloc]initWithString:@"TIME COUNT DOWN" attributes:@{NSForegroundColorAttributeName : lightOrangeColor, NSFontAttributeName : [UIFont boldSystemFontOfSize:15]}];
     summaryLabel.textAlignment = NSTextAlignmentCenter;
     [summaryView addSubview:summaryLabel];
     
@@ -173,7 +173,7 @@ static UIColor *lightOrangeColor;
     labelDay.backgroundColor = [UIColor clearColor];
     labelDay.textAlignment = NSTextAlignmentCenter;
     labelDay.textColor = [UIColor blackColor];
-    labelDay.text = @"00h 00m 00s";
+    labelDay.text = @"0";
     [underlay addSubview:labelDay];
 
     
@@ -181,13 +181,13 @@ static UIColor *lightOrangeColor;
     labelWeek.backgroundColor = [UIColor clearColor];
     labelWeek.textColor = [UIColor blackColor];
     labelWeek.textAlignment = NSTextAlignmentCenter;
-    labelWeek.text = @"14h 00m";
+    labelWeek.text = @"0";
     [underlay addSubview:labelWeek];
     
     UILabel *labelMonth = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(labelWeek.frame), 0, width, height)];
     labelMonth.backgroundColor = [UIColor clearColor];
     labelMonth.textColor = [UIColor blackColor];
-    labelMonth.text = @"09h 00m";
+    labelMonth.text = @"0";
     labelMonth.textAlignment = NSTextAlignmentCenter;
     [underlay addSubview:labelMonth];
     
@@ -195,14 +195,14 @@ static UIColor *lightOrangeColor;
     labelDayString.backgroundColor = [UIColor clearColor];
     labelDayString.textAlignment = NSTextAlignmentCenter;
     labelDayString.textColor = [UIColor lightGrayColor];
-    labelDayString.text = @"Days";
+    labelDayString.text = @"Seconds";
     [labelDay addSubview:labelDayString];
     
     UILabel *labelWeekString = [[UILabel alloc]initWithFrame:CGRectMake(0, height/2, width, height/2)];
     labelWeekString.backgroundColor = [UIColor clearColor];
     labelWeekString.textAlignment = NSTextAlignmentCenter;
     labelWeekString.textColor = [UIColor lightGrayColor];
-    labelWeekString.text = @"Week";
+    labelWeekString.text = @"Minues";
     [labelWeek addSubview:labelWeekString];
 
     
@@ -210,7 +210,7 @@ static UIColor *lightOrangeColor;
     labelMonthString.backgroundColor = [UIColor clearColor];
     labelMonthString.textAlignment = NSTextAlignmentCenter;
     labelMonthString.textColor = [UIColor lightGrayColor];
-    labelMonthString.text = @"Month";
+    labelMonthString.text = @"Hours";
     [labelMonth addSubview:labelMonthString];
     
     [self.view bringSubviewToFront:dropDownMenu];

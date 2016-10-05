@@ -207,7 +207,7 @@ static UIColor *lightOrangeColor;
     labelWeekString.backgroundColor = [UIColor clearColor];
     labelWeekString.textAlignment = NSTextAlignmentCenter;
     labelWeekString.textColor = [UIColor lightGrayColor];
-    labelWeekString.text = @"Minues";
+    labelWeekString.text = @"Minutes";
     [labelWeek addSubview:labelWeekString];
 
     
@@ -289,16 +289,23 @@ static UIColor *lightOrangeColor;
     secs = secs+1;
     if(secs==maxLimit)
     {
-        if(minutes==maxLimit)
+        minutes = minutes + 1;
+        if(minutes==2)
         {
-            hours = hours + 1;
-            minutes = 0;
+            NSLog(@"hai");
+        }
+        
+        if(minutes!=maxLimit)
+        {
+            
             secs = 0;
         }
         else
         {
-        minutes = minutes + 1;
-        secs = 0;
+            hours = hours + 1;
+            minutes = 0;
+            secs = 0;
+        
         }
     }
     

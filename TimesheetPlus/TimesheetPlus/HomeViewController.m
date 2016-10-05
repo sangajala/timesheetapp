@@ -23,8 +23,12 @@ static UIColor *lightOrangeColor;
     UIButton *pauseButton;
     UIButton *stopButton;
     int secs;
+    int minutes;
+    int hours;
     UILabel *timer;
     UILabel *labelDay;
+    UILabel *labelWeek;
+    UILabel *labelMonth;
     NSTimer *timerx;
 }
 
@@ -276,7 +280,20 @@ static UIColor *lightOrangeColor;
 -(void) timerTick:(NSTimer *)timer
 {
     secs = secs+1;
+    if(secs==60)
+    {
+        if(minutes==60)
+        {
+            hours = hours + 1;
+            minutes = 0;
+            secs = 0;
+        }
+        minutes = minutes + 1;
+        secs = 0;
+    }
     labelDay.text = [NSString stringWithFormat:@"%d",secs];
+    labelWeek.text = [NSString stringWithFormat:@"%d",minutes];
+    labelMonth.text = [NSString stringWithFormat:@"%d",hours];
 }
 
 -(void) timerPause:(NSTimer *)timer

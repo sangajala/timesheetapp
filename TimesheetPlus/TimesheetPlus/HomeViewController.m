@@ -78,20 +78,20 @@ static UIColor *lightOrangeColor;
     [item1 setText:@"Task 1"];
     [dropdownItems addObject:item1];
     
-    IGLDropDownItem *item2 = [[IGLDropDownItem alloc] init];
-    [item2 setIconImage:[UIImage imageNamed:@"taskicon.png"]];
-    [item2 setText:@"Task 2"];
-    [dropdownItems addObject:item2];
-    
-    IGLDropDownItem *item3 = [[IGLDropDownItem alloc] init];
-    [item3 setIconImage:[UIImage imageNamed:@"taskicon.png"]];
-    [item3 setText:@"Task 3"];
-    [dropdownItems addObject:item3];
-    
-    IGLDropDownItem *item4 = [[IGLDropDownItem alloc] init];
-    [item4 setIconImage:[UIImage imageNamed:@"taskicon.png"]];
-    [item4 setText:@"Task 4"];
-    [dropdownItems addObject:item4];
+//    IGLDropDownItem *item2 = [[IGLDropDownItem alloc] init];
+//    [item2 setIconImage:[UIImage imageNamed:@"taskicon.png"]];
+//    [item2 setText:@"Task 2"];
+//    [dropdownItems addObject:item2];
+//    
+//    IGLDropDownItem *item3 = [[IGLDropDownItem alloc] init];
+//    [item3 setIconImage:[UIImage imageNamed:@"taskicon.png"]];
+//    [item3 setText:@"Task 3"];
+//    [dropdownItems addObject:item3];
+//    
+//    IGLDropDownItem *item4 = [[IGLDropDownItem alloc] init];
+//    [item4 setIconImage:[UIImage imageNamed:@"taskicon.png"]];
+//    [item4 setText:@"Task 4"];
+//    [dropdownItems addObject:item4];
     
     XAxis = 10;
     width = screenW-20;

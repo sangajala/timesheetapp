@@ -290,11 +290,6 @@ static UIColor *lightOrangeColor;
     if(secs==maxLimit)
     {
         minutes = minutes + 1;
-        if(minutes==2)
-        {
-            NSLog(@"hai");
-        }
-        
         if(minutes!=maxLimit)
         {
             
